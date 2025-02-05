@@ -1,0 +1,92 @@
+/* Sign Up */
+.all-title {
+    text-align: center;
+    margin-top: 89px;
+}
+.sign-up-title {
+    font-family: "pretendard", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    margin-bottom: 42px;
+}
+.sign-up-title > span{
+    color: #1187CF;
+}
+.sign-up-box {
+    border: 1px solid #ddd;
+    width: 554px;
+    /*height: 441px;*/
+}
+/* preferences */
+.sign-up-box strong {
+    margin-right: 94px;
+}
+#interest {
+    width: 200px;
+    margin-bottom: 10px;
+}
+/* info */
+.sign-up-prop {
+    position: relative;
+}
+.sign-up-prop label,
+.sign-in-prop label{
+    font-family: "pretendard", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13px;
+    margin-top: 37px;
+}
+.sign-up-prop input,
+.sign-in-prop input{
+    border: 1.5px solid black;
+    border-radius: 10px;
+    width: 261px;
+    height: 30px;
+}
+.id-check-btn {
+    position: absolute;
+    background-color: #49B7FA;
+    width: 85px;
+    height: 30px;
+    border-radius: 50px;
+    margin-left: 21px;
+    right: -100px;
+}
+.check-warn {
+    font-family: "pretendard", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    color: #FF3C3C;
+    position: absolute;
+}
+.id-check-ok {
+    font-family: "pretendard", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    color: #00B138;
+}
+.sign-up-btn {
+    background-color: #49B7FA;
+    width: 85px;
+    height: 30px;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+/* Sign In */
+.sign-in-img {
+    height: 388px;
+    background-image: url("../image/compass.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.sign-in-btn {
+    width: 86px;
+    height: 30px;
+    background-color: #49B7FA;
+    border-radius: 3px;
+}

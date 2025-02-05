@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<th:block layout:fragment="content">
+    <!-- 메인 -->
+    <section class="main">
+        <div class="main-banner">
+            <video class="bg-video" autoplay muted loop>
+                <source src="/image/banner1.mp4" type="video/mp4" />
+            </video>
+            <div class="main-text"></div>
+        </div>
+        <div class="merit">
+            <h1 class="text-center mt-5 mb-4">
+                Dream
+                <span class="merit-span">Link</span>
+                의 장점
+            </h1>
+            <div class="merit-divs d-flex justify-content-around">
+                <a href="">
+                    <div id="merit1" class="merit-div">
+                        <h4 class="text-center d-flex align-items-center justify-content-center">
+                            <span>카테고리</span>
+                            별 복지 정책 분류
+                        </h4>
+                        <div class="merit-img"></div>
+                    </div>
+                </a>
+                <a href="/calendar.html">
+                    <div id="merit2" class="merit-div">
+                        <h4 class="text-center d-flex align-items-center justify-content-center">
+                            <span>달력</span>
+                            에 일정 표시 가능
+                        </h4>
+                        <div class="merit-img"></div>
+                    </div>
+                </a>
+                <a href="">
+                    <div id="merit3" class="merit-div">
+                        <h4 class="text-center d-flex align-items-center justify-content-center">
+                            <span>맞춤&nbsp;</span>
+                            복지 정책 확인
+                        </h4>
+                        <div class="merit-img"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script src="/js/main.js"></script>
+</th:block>

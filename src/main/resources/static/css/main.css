@@ -1,0 +1,83 @@
+/* 메인 */
+.main {
+    padding-bottom: 100px;
+}
+.bg-video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+.main-text {
+    font-family: "pretendard", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.main-text > span {
+    display: inline-block;
+    opacity: 0;
+    animation: slideInLeft 0.5s ease-in-out forwards;
+    text-shadow: 0px 0px 10px #3094f1;
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-30px);
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* 장점 */
+.merit-span {
+    color: #1187cf;
+}
+.merit-div {
+    width: 300px;
+    height: 400px;
+    background-color: #a4e1ff;
+    border-radius: 20px;
+    transform: translate(0, 50px);
+    &:hover {
+        box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.289);
+    }
+}
+
+.merit-div span {
+    color: rgb(255, 60, 60);
+    white-space: nowrap;
+}
+.merit-divs > a {
+    text-decoration-line: none;
+    color: white;
+}
+.merit-div > h4 {
+    height: 50px;
+    margin: 0;
+}
+.merit-div {
+    /* transition: 1.5s; */
+    opacity: 0;
+}
+.merit-div.fade-in {
+    /* opacity: 1;
+    transform: translateY(0px); */
+    animation: fadeInAnimation 1s ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

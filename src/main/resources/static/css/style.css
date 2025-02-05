@@ -1,0 +1,104 @@
+body {
+    font-family: "pretendard", sans-serif;
+}
+header {
+    height: 90px;
+    position: sticky; /* 스크롤해도 header가 위에 고정되게 하기 위해 */
+    top: 0;
+    z-index: 2;
+}
+
+/* 메뉴 */
+.menu {
+    font-family: "pretendard", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    width: 100%;
+}
+.menu ul {
+    width: 100%;
+}
+.menu ul li a {
+    color: black;
+    position: relative;
+    padding: 0;
+    display: inline-block; /* a 태그 크기에 맞추기 */
+}
+.menu ul li a::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 70%;
+    width: 0;
+    height: 5px;
+    background-color: #3094f1;
+    transition: all 0.5s;
+    opacity: 0.8;
+}
+.menu ul li a:hover::after {
+    /* color: #3094f1; */
+    width: 100%;
+}
+
+/* 로그인, 회원가입 */
+.sign {
+    font-family: "pretendard", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: small;
+    position: absolute;
+    left: 30%;
+}
+.sign a {
+    color: black;
+}
+
+/* search */
+.search {
+    height: 35.5px;
+    margin-left: -40px;
+}
+.search-all {
+    width: 250px;
+    position: relative;
+}
+.search-bar {
+    height: 40px;
+    width: 100%;
+    border: 2px solid;
+    border-color: black;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+.div-i {
+    width: 36px;
+}
+.div-x {
+    width: 45px;
+}
+.search-form {
+    width: 250px;
+}
+.search-input {
+    height: 35px;
+    width: 100%;
+    padding-left: 10px;
+    border: none;
+    border-radius: 13px;
+    background-color: transparent;
+    padding-left: -10px;
+    &:focus {
+        outline: none;
+        background-color: transparent;
+    }
+}
+.search-btn {
+    position: absolute;
+    right: 15%;
+}
+
+/* footer */
+footer {
+    padding-top: 10px;
+    padding-left: 10px;
+}

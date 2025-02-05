@@ -1,0 +1,112 @@
+/* fullcalendar */
+.fc {
+    width: 100%;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    margin: 0;
+    padding: 0 40px;
+    height: 63px;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.fc .fc-button-primary {
+    background-color: #3094f1;
+    border: none;
+
+    span {
+        font-weight: 500;
+        font-size: 28px;
+    }
+}
+
+.fc-theme-standard th {
+    height: 32px;
+    padding-top: 3.5px;
+    background: #a4e1ff;
+    border: 1px solid #a4e1ff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #7b7b7b;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: #fff8bd;
+    color: #356eff;
+}
+
+.fc .fc-daygrid-day-frame {
+    padding: 10px;
+}
+
+.fc .fc-daygrid-day-top {
+    flex-direction: row;
+    margin-bottom: 3px;
+}
+
+.fc-event {
+    cursor: pointer;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* 일요일 날짜 빨간색 */
+.fc-day a {
+    color: black;
+    text-decoration: none;
+}
+.fc-day-sun a {
+    color: red;
+    text-decoration: none;
+}
+
+/* 토요일 날짜 파란색 */
+.fc-day-sat a {
+    color: blue;
+    text-decoration: none;
+}
+
+/* 모달 */
+.add-modal {
+    width: 528px;
+    height: 477px;
+    margin: 0 auto;
+
+    font-family: "pretendard", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.add-modal input {
+    width: 405px;
+    height: 42px;
+    border-radius: 5px;
+}
+.start-div {
+    position: relative;
+}
+.start-div > img {
+    position: absolute;
+    top: 30px;
+    left: 90%;
+}
+.end-div {
+    position: relative;
+}
+.end-div > img {
+    position: absolute;
+    top: 30px;
+    left: 90%;
+}
+.add-modal-btn button {
+    width: 86px;
+    height: 30px;
+    background-color: #49b7fa;
+    border-radius: 50px;
+    margin: 60px auto 0;
+}
