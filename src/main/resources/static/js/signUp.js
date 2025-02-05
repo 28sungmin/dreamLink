@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    // 생년월일
     let day = 31;
     for (let i = 2025; i >= 1920; i--) {
         $('#year').append('<option value="' + i + '">' + i + '</option>');
@@ -44,4 +45,27 @@ $(document).ready(function () {
         placeholder: "관심주제를 선택하세요",
         allowClear: true // 선택 해제 기능
     });
+
+    // 지역
+    $.getJSON("/region.json", function(regions) {
+        for (r of regions) {
+            $("#bigRegion").append('<option value="' + r.name + '">' + r.name + '</option>');
+        }
+        let bigRegion;
+        $("#bigRegion").on("change", function() {
+            bigRegion = $(this).val();
+
+            // smallRegion 초기화
+            $("#smallRegion").empty(); // 기존에 있던 option 제거
+            $("#smallRegion").append('<option value="">선택하세요</option>');
+            for (r of regions) {
+                if (r.name === bigRegion) {
+                    for (let i = 0; i < r.subArea.length; i++) {
+                        $("#smallRegion").append('<option value="' + r.subArea[i] + '">' + r.subArea[i] + '</option>');
+                    }
+                }
+            }
+        })
+    });
+
 });

@@ -16,16 +16,32 @@
 .sign-up-box {
     border: 1px solid #ddd;
     width: 554px;
-    /*height: 441px;*/
+    margin-bottom: 100px;
 }
-/* 잠시 수정합니다. */
+
 /* preferences */
 .sign-up-box strong {
     margin-right: 94px;
+    width: 4em; /* 텍스트를 4글자로 맞추기 */
 }
-#interest {
+.preference-box label {
+    margin-bottom: 0;
+}
+.preference-box > div {
+    margin-bottom: 40px;
+}
+.go-info-btn {
+    background-color: #49B7FA;
+    width: 85px;
+    height: 30px;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+.select2-selection {
     width: 200px;
-    margin-bottom: 10px;
+}
+.select2-dropdown {
+    width: 200px;
 }
 /* info */
 .sign-up-prop {

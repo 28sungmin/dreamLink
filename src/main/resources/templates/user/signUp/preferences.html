@@ -10,8 +10,8 @@
         </div>
         <div class="d-flex justify-content-center">
             <div class="sign-up-box d-flex justify-content-center align-items-center">
-                <div>
-                    <div class="gender d-flex">
+                <div class="preference-box">
+                    <div class="gender d-flex mt-4">
                         <strong>성별</strong>
                         <div>
                             <label class="mr-3">
@@ -39,8 +39,17 @@
                             <span>일</span>
                         </div>
                     </div>
+                    <div class="region d-flex">
+                        <strong>지역</strong>
+                        <select name="big" id="bigRegion">
+                            <option>선택하세요</option>
+                        </select>
+                        <select name="small" id="smallRegion">
+                            <option>선택하세요</option>
+                        </select>
+                    </div>
                     <div class="interest d-flex">
-                        <strong>관심주제</strong>
+                        <strong class="d-flex align-items-center">관심주제</strong>
                         <select name="interest" id="interest" multiple="multiple">
                             <option value="education">교육</option>
                             <option value="education2">교육2</option>
@@ -48,6 +57,14 @@
                             <option value="education4">교육4</option>
                             <option value="education5">교육5</option>
                         </select>
+                    </div>
+                    <div>
+                        <button
+                                type="submit"
+                                class="go-info-btn btn my-5 d-flex align-items-center justify-content-center text-white"
+                        >
+                            다음
+                        </button>
                     </div>
                 </div>
             </div>
