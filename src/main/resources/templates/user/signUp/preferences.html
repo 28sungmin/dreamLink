@@ -15,7 +15,7 @@
                         <strong>성별</strong>
                         <div>
                             <label class="mr-3">
-                                남성 <input type="radio" name="gender" value="man">
+                                남성 <input type="radio" name="gender" value="man" checked="checked">
                             </label>
                             <label>
                                 여성 <input type="radio" name="gender" value="woman">
@@ -41,21 +41,17 @@
                     </div>
                     <div class="region d-flex">
                         <strong>지역</strong>
-                        <select name="big" id="bigRegion">
+                        <select name="bigRegion" id="bigRegion">
                             <option>선택하세요</option>
                         </select>
-                        <select name="small" id="smallRegion">
+                        <select name="smallRegion" id="smallRegion">
                             <option>선택하세요</option>
                         </select>
                     </div>
                     <div class="interest d-flex">
                         <strong class="d-flex align-items-center">관심주제</strong>
                         <select name="interest" id="interest" multiple="multiple">
-                            <option value="education">교육</option>
-                            <option value="education2">교육2</option>
-                            <option value="education3">교육3</option>
-                            <option value="education4">교육4</option>
-                            <option value="education5">교육5</option>
+                            <option th:each="interest : ${interestList}" th:value="${interest}" th:text="${interest}"></option>
                         </select>
                     </div>
                     <div>

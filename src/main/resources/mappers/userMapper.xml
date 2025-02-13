@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dreamlink.user.mapper.UserMapper">
+    <select id="selectInterestList" resultType="String">
+        SELECT
+            `name`
+        FROM
+            `service_list`
+    </select>
+
+    <select id="selectUserByLoginId" parameterType="String" resultType="String">
+        SELECT
+            `loginId`
+        FROM
+            `user`
+        WHERE
+            `loginId` = #{loginId}
+    </select>
+
+    <select id="selectUserByLoginIdPassword" parameterType="map">
+        SELECT
+            `id`,
+            `gender`,
+            `birth`,
+            `region`,
+            `interest`,
+            `name`,
+            `phone`,
+            `loginId`,
+            `password`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `user`
+        WHERE
+            `loginId` = #{loginId}
+            AND
+            `password` = #{password}
+    </select>
+
+    <insert id="insertUser" parameterType="map">
+        INSERT INTO `user`
+        (
+            `gender`,
+            `birth`,
+            `region`,
+            `interest`,
+            `name`,
+            `phone`,
+            `loginId`,
+            `password`,
+            `createdAt`,
+            `updatedAt`
+        )
+        VALUES
+        (
+            #{gender},
+            #{birth},
+            #{region},
+            #{interest},
+            #{name},
+            #{phone},
+            #{loginId},
+            #{password},
+            NOW(),
+            NOW()
+        )
+    </insert>
+</mapper>
