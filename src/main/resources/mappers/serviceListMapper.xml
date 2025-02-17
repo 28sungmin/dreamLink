@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dreamlink.service.mapper.ServiceListMapper">
+    <select id="selectService" resultType="com.dreamlink.service.domain.Service">
+        SELECT
+            `id`,
+            `name`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `service`
+    </select>
+    <select id="selectServiceListByServiceId" parameterType="int">
+        SELECT
+            `name`
+        FROM
+            `service_list`
+        WHERE
+            `serviceId` = #{serviceId}
+    </select>
+</mapper>

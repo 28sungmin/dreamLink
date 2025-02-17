@@ -1,0 +1,96 @@
+/* entity */
+.entity {
+    width: 1200px;
+    background-color: #A4E1FF;
+    margin: 0 auto;
+}
+.entity .nav-item {
+    width: 400px;
+}
+.entity .nav-item:hover {
+    background-color: #1187CF;
+}
+.entity .nav-item a {
+    color: #000;
+}
+.entity .nav-item:hover a {
+    color: #fff;
+}
+.entity .nav-item:nth-child(2) {
+    border-left: 1px solid #a8a8a8;
+    border-right: 1px solid #a8a8a8;
+}
+
+/* service-menu */
+.service-menu {
+    /*background-color: #afa;*/
+    width: 310px;
+    height: 700px;
+}
+.service-menu > .btn-group {
+    display: block;
+    margin-top: 30px;
+}
+.service-menu > .btn-group:first-child {
+    margin-top: 100px;
+}
+.services {
+    /*background-color: #aaf;*/
+    width: 910px;
+    height: 700px;
+}
+.service-card {
+    /*background-color: #fff;*/
+    width: 390px;
+    height: 245px;
+    border: 2px solid #000;
+    border-radius: 30px;
+    margin-top: 50px;
+}
+.service-menus {
+    /*background-color: #ffa;*/
+    height: 40px;
+}
+.service-title {
+    /*background-color: #faa;*/
+    height: 60px;
+    font-family: "pretendard", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 27px;
+}
+.service-phone {
+    /*background-color: #faf;*/
+    height: 90px;
+}
+.service-scrap {
+    /*background-color: #afa;*/
+    height: 50px;
+}
+/* 세부 */
+.service-menus-menu {
+    background-color: #49B7FA;
+    width: 63px;
+    height: 25px;
+    border-radius: 50px;
+    margin-left: 20px;
+    font-family: "pretendard", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+}
+.service-phone-box {
+    width: 167px;
+    height: 73px;
+    background-color: #d9d9d9;
+}
+.service-phone-box > p {
+    text-align: center;
+    font-family: "pretendard", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 17px;
+}
+.service-scrap-star {
+    margin-left: 20px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<th:block layout:fragment="content">
+    <section class="mt-5">
+        <nav class="entity d-flex justify-content-center align-items-center">
+            <ul class="nav nav-fill">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">중앙부처</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">지자체</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">민간</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="all-service d-flex justify-content-center">
+            <div class="service-menu">
+                <div class="btn-group dropright" th:each="sMenu : ${serviceMenu}">
+                    <button type="button" th:text="${sMenu.getName()}"
+                            th:value="${sMenu.getId()}"
+                            class="btn btn-secondary dropdown-toggle service-btn"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu">
+                    </div>
+                </div>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-menus d-flex align-items-center">
+                        <div class="service-menus-menu d-flex align-items-center justify-content-center text-white">종류1</div>
+                        <div class="service-menus-menu d-flex align-items-center justify-content-center text-white">종류2</div>
+                    </div>
+                    <div class="service-title d-flex align-items-center justify-content-center">
+                        복지정책1
+                    </div>
+                    <div class="service-phone d-flex align-items-center justify-content-center">
+                        <div class="service-phone-box">
+                            <p class="mt-1">복지정책과</p>
+                            <p>02-111-2222</p>
+                        </div>
+                    </div>
+                    <div class="service-scrap d-flex align-items-center">
+                        <div class="service-scrap-star">
+                            <img src="/image/star.png" alt="스크랩 안 함" width="30">
+                        </div>
+                        <div class="service-scrap-star-fill d-none">
+                            <img src="/image/star_fill.png" alt="스크랩 함" width="30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/welfare.js"></script>
+</th:block>
