@@ -19,10 +19,38 @@ document.addEventListener("DOMContentLoaded", function () {
             center: "title",
             right: "next",
         },
-        editable: true,
+        // editable: true,
         dayMaxEvents: true,
         displayEventTime: false, // 시간 표시 제거
         height: 650,
+
+        events: function(info, successCallback, failureCallback) {
+            $.ajax({
+                url: '/calendar/show',  // 서버에서 캘린더 데이터 가져오기
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    if (data.code === 200) {
+                        let events = data.event.map(function(event) {
+                            return {
+                                title: event.title,
+                                start: event.start,
+                                end: event.end,
+                                backgroundColor: '#ffc267',  // 기본 색상 설정
+                                borderColor: '#ffc267',
+                                textColor: "#fff"
+                            };
+                        });
+                        successCallback(events);
+                    } else {
+                        failureCallback(data.error_message);
+                    }
+                },
+                error: function(error) {
+                    failureCallback("일정을 불러오는 데 실패했습니다. 관리자에게 문의하세요.");
+                }
+            });
+        }
 
         // 일정 클릭
         // eventClick: function(info) {

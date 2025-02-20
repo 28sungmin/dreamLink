@@ -1,0 +1,31 @@
+<div class="service-card" th:each="welfare, stat : ${welfareList}" >
+  <a href="#">
+    <div class="d-flex flex-wrap">
+      <div class="service-menus d-flex align-items-center justify-content-start"
+           th:each="subject, subjectStat : ${subjectList[stat.index]}"
+           th:if="${subjectStat.index < 4}">
+        <div class="service-menus-menu d-flex align-items-center justify-content-center text-white"
+             th:text="${subject}">
+        </div>
+      </div>
+    </div>
+    <div class="service-title d-flex align-items-center justify-content-center"
+    th:text="${welfare.getTitle()}">
+      복지정책1
+    </div>
+    <div class="service-phone d-flex align-items-center justify-content-center">
+      <div class="service-phone-box">
+        <p class="mt-1" th:text="${welfare.getDepartment()}">복지정책과</p>
+        <p th:text="${welfare.getPhoneCall()}">02-111-2222</p>
+      </div>
+    </div>
+    <div class="service-scrap d-flex align-items-center">
+      <div class="service-scrap-star">
+        <img src="/image/star.png" alt="스크랩 안 함" width="30">
+      </div>
+      <div class="service-scrap-star-fill d-none">
+        <img src="/image/star_fill.png" alt="스크랩 함" width="30">
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dreamlink.welfare.mapper.WelfareMapper">
+    <select id="selectWelfareListByEntity" parameterType="String" resultType="com.dreamlink.welfare.domain.Welfare">
+        SELECT
+            `id`,
+            `entity`,
+            `title`,
+            `department`,
+            `phoneCall`,
+            `applicant`,
+            `service`,
+            `book`,
+            `addition`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `welfare`
+        WHERE
+            `entity` LIKE CONCAT(#{entity}, '%')
+    </select>
+    <select id="selectWelfareListByEntityService" parameterType="map" resultType="com.dreamlink.welfare.domain.Welfare">
+        SELECT
+            `id`,
+            `entity`,
+            `title`,
+            `department`,
+            `phoneCall`,
+            `applicant`,
+            `service`,
+            `book`,
+            `addition`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `welfare`
+        WHERE
+            `entity` LIKE CONCAT(#{entity}, '%')
+    </select>
+    <select id="selectWelfareByWelfareId" parameterType="int" resultType="com.dreamlink.welfare.domain.Welfare">
+        SELECT
+            `id`,
+            `entity`,
+            `title`,
+            `department`,
+            `phoneCall`,
+            `applicant`,
+            `service`,
+            `book`,
+            `addition`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `welfare`
+        WHERE
+            `id` = #{welfareId}
+    </select>
+    <select id="selectWelfareIdListByEntity" parameterType="String" resultType="int">
+        SELECT
+            `id`
+        FROM
+            `welfare`
+        WHERE
+            `entity` LIKE CONCAT(#{entity}, '%')
+    </select>
+</mapper>

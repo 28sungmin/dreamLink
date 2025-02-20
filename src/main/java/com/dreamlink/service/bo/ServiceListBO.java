@@ -19,4 +19,12 @@ public class ServiceListBO {
     public List<String> getServiceListByServiceId(int serviceId) {
         return serviceListMapper.selectServiceListByServiceId(serviceId);
     }
+
+    public String getSubjectBySubjectId(int subjectId) {
+        return serviceListMapper.selectSubjectBySubjectId(subjectId);
+    }
+
+    public int getServiceIdByService(String service) {
+        return serviceListMapper.selectServiceIdByService(service);
+    }
 }

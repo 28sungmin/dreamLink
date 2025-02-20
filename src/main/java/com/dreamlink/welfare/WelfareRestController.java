@@ -1,6 +1,7 @@
 package com.dreamlink.welfare;
 
 import com.dreamlink.welfare.bo.WelfareBO;
+import com.dreamlink.welfare.domain.Welfare;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +18,12 @@ public class WelfareRestController {
 
     private final WelfareBO welfareBO;
 
-    @PostMapping("/welfare")
+    /**
+     * service의 세부 메뉴 API
+     * @param serviceId
+     * @return
+     */
+    @PostMapping("/welfare/service")
     public Map<String, Object> welfare(
             @RequestParam("serviceId") int serviceId) {
 
@@ -32,7 +38,6 @@ public class WelfareRestController {
             result.put("code", 500);
             result.put("error_message", "데이터 전송에 실패했습니다.");
         }
-
 
         return result;
     }

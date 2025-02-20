@@ -19,4 +19,20 @@
         WHERE
             `serviceId` = #{serviceId}
     </select>
+    <select id="selectSubjectBySubjectId" parameterType="int" resultType="String">
+        SELECT
+            `name`
+        FROM
+            `service_list`
+        WHERE
+            `id` = #{subjectId}
+    </select>
+    <select id="selectServiceIdByService" parameterType="String" resultType="int">
+        SELECT
+            `id`
+        FROM
+            `service_list`
+        WHERE
+            `name` = #{service}
+    </select>
 </mapper>

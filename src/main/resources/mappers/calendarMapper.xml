@@ -2,9 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dreamlink.calendar.mapper.CalendarMapper">
+    <select id="selectCalendarByUserId" parameterType="int" resultType="com.dreamlink.calendar.domain.Calendar">
+        SELECT
+            `id`,
+            `userId`,
+            `title`,
+            `startDate`,
+            `endDate`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `calendar`
+        WHERE
+            `userId` = #{userId}
+    </select>
     <insert id="insertCalendar" parameterType="map">
         INSERT INTO `calendar`
         (
+            `userId`,
             `title`,
             `startDate`,
             `endDate`,
@@ -13,6 +28,7 @@
         )
         VALUES
         (
+            #{userId},
             #{title},
             #{startDate},
             #{endDate},

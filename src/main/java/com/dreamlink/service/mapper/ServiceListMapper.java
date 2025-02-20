@@ -11,4 +11,8 @@ public interface ServiceListMapper {
     public List<Service> selectService();
 
     public List<String> selectServiceListByServiceId(int serviceId);
+
+    public String selectSubjectBySubjectId(int subjectId);
+
+    public int selectServiceIdByService(String service);
 }
