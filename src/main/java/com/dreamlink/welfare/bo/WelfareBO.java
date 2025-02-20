@@ -86,4 +86,24 @@ public class WelfareBO {
 
         return null;
     }
+
+    public List<Welfare> getWelfareAllList() {
+        return welfareMapper.selectWelfareAllList();
+    }
+
+    public List<List<String>> getSubjectAllList() {
+        List<Welfare> welfareList = welfareMapper.selectWelfareAllList();
+
+        List<List<String>> subjectList = new ArrayList<>();
+        for (Welfare welfare : welfareList) {
+            List<String> welfareSubjectList = new ArrayList<>();
+            List<Integer> welfareSubjectId = subjectBO.getSubjectListByWelfareId(welfare.getId());
+            for (Integer subjectId : welfareSubjectId) {
+                String welfareSubject = serviceListBO.getSubjectBySubjectId(subjectId);
+                welfareSubjectList.add(welfareSubject);
+            }
+            subjectList.add(welfareSubjectList);
+        }
+        return subjectList;
+    }
 }

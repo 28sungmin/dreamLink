@@ -13,9 +13,7 @@ public interface WelfareMapper {
 
     public Welfare selectWelfareByWelfareId(int welfareId);
 
-    public List<Welfare> selectWelfareListByEntityService(
-            @Param("entity") String entity,
-            @Param("service") String service);
-
     public List<Integer> selectWelfareIdListByEntity(String entity);
+
+    public List<Welfare> selectWelfareAllList();
 }

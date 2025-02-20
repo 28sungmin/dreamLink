@@ -23,8 +23,13 @@ public class WelfareController {
             Model model) {
 
         List<Service> serviceMenu = welfareBO.getService();
+        List<Welfare> welfareAllList = welfareBO.getWelfareAllList();
+
+        List<List<String>> subjectList = welfareBO.getSubjectAllList();
 
         model.addAttribute("serviceMenu", serviceMenu);
+        model.addAttribute("welfareAllList", welfareAllList);
+        model.addAttribute("subjectList", subjectList);
         return "welfare";
     }
 

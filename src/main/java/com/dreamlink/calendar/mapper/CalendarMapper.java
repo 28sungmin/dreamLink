@@ -1,6 +1,5 @@
 package com.dreamlink.calendar.mapper;
 
-import com.dreamlink.calendar.bo.CalendarBO;
 import com.dreamlink.calendar.domain.Calendar;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.data.repository.query.Param;

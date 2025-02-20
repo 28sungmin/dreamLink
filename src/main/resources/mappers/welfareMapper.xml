@@ -20,24 +20,6 @@
         WHERE
             `entity` LIKE CONCAT(#{entity}, '%')
     </select>
-    <select id="selectWelfareListByEntityService" parameterType="map" resultType="com.dreamlink.welfare.domain.Welfare">
-        SELECT
-            `id`,
-            `entity`,
-            `title`,
-            `department`,
-            `phoneCall`,
-            `applicant`,
-            `service`,
-            `book`,
-            `addition`,
-            `createdAt`,
-            `updatedAt`
-        FROM
-            `welfare`
-        WHERE
-            `entity` LIKE CONCAT(#{entity}, '%')
-    </select>
     <select id="selectWelfareByWelfareId" parameterType="int" resultType="com.dreamlink.welfare.domain.Welfare">
         SELECT
             `id`,
@@ -63,5 +45,21 @@
             `welfare`
         WHERE
             `entity` LIKE CONCAT(#{entity}, '%')
+    </select>
+    <select id="selectWelfareAllList" resultType="com.dreamlink.welfare.domain.Welfare">
+        SELECT
+            `id`,
+            `entity`,
+            `title`,
+            `department`,
+            `phoneCall`,
+            `applicant`,
+            `service`,
+            `book`,
+            `addition`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `welfare`
     </select>
 </mapper>

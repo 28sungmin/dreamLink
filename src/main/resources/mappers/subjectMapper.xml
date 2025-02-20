@@ -11,7 +11,7 @@
             `welfareId` = #{welfareId}
 
     </select>
-    <select id="selectWelfareIdByServiceId" parameterType="int" resultType="int">
+    <select id="selectWelfareIdByServiceId" parameterType="int">
         SELECT
             `welfareId`
         FROM

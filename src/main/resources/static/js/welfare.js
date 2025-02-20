@@ -15,18 +15,24 @@ $(document).ready(function () {
 
         let entity = $(this).text();
 
-        $.ajax({
-            type:"post",
-            url: "/welfare/entity",
-            data:{"entity":entity},
+        // active 클래스가 없으면 welfare.html로 이동
+        if ($(this).hasClass("active")) {
+            $.ajax({
+                type: "post",
+                url: "/welfare/entity",
+                data: { "entity": entity },
 
-            success: function(data) {
-                $("#services").html(data);
-            },
-            error: function (e) {
-                alert("entity에 해당하는 정책들이 없습니다. 관리자에게 문의하세요.");
-            }
-        })
+                success: function(data) {
+                    $("#services").html(data);
+                },
+                error: function(e) {
+                    alert("entity에 해당하는 정책들이 없습니다. 관리자에게 문의하세요.");
+                }
+            });
+        } else {
+            // active 클래스가 없으면 welfare.html로 리다이렉트
+            location.href = "/welfare";  // 필요한 URL로 변경
+        }
     });
 
     $(".service-btn").on("click", function() {
