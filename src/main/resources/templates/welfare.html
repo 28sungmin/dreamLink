@@ -63,6 +63,11 @@
                 </div>
             </div>
         </div>
+        <!-- 페이징 -->
+        <div class="page d-flex justify-content-center">
+            <a th:if="${prevId != 0}" th:href="|/welfare?prevId=${prevId}|" class="mr-5">&lt;&lt; 이전</a>
+            <a th:if="${nextId != 0}" th:href="|/welfare?nextId=${nextId}|">다음 &gt;&gt;</a>
+        </div>
     </section>
     <script src="/js/welfare.js"></script>
 </th:block>

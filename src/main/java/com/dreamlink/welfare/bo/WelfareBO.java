@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -19,6 +20,7 @@ public class WelfareBO {
     private final ServiceListBO serviceListBO;
     private final SubjectBO subjectBO;
     private final WelfareMapper welfareMapper;
+    private final static int POST_MAX_SIZE = 4; // 이런 것도 원래는 따로 페이징 관련 클래스를 만들어서 거기에 넣는게 더 좋다.
 
     public List<com.dreamlink.service.domain.Service> getService() {
         return serviceBO.getService();
@@ -87,8 +89,41 @@ public class WelfareBO {
         return null;
     }
 
-    public List<Welfare> getWelfareAllList() {
-        return welfareMapper.selectWelfareAllList();
+    public List<Welfare> getWelfareAllList(Integer prevId, Integer nextId) {
+
+        Integer standardId = null; // 기준 postId(prev or next)
+
+        if (prevId != null) { // 3) 경우
+            standardId = prevId;
+
+            // 예) [5 6 7]
+            List<Welfare> welfareList = welfareMapper.selectWelfareListPrev(standardId, POST_MAX_SIZE);
+
+            // reverse List
+            Collections.reverse(welfareList);
+            return welfareList;
+        } else if (nextId != null) { // 2) 경우
+            standardId = nextId;
+
+            List<Welfare> welfareList = welfareMapper.selectWelfareListNext(standardId, POST_MAX_SIZE);
+            return welfareList;
+        }
+
+        return welfareMapper.selectWelfareList(standardId, POST_MAX_SIZE);
+    }
+
+    // 이전 없나?
+    // user가 쓴 글들 중 제일 큰 숫자가 prevId와 같으면 이전이 없는 것임
+    public boolean isPrevLastPage(int prevId) {
+        int maxPostId = welfareMapper.selectWelfareIdAsSort("desc");
+        return maxPostId == prevId; // true이면 마지막이라는 뜻.
+    }
+
+    // 다음 없나?
+    // user가 쓴 글들 중 제일 작은 숫자가 nextId와 같으면 다음이 없는 것임
+    public boolean isNextLastPage(int nextId) {
+        int minPostId = welfareMapper.selectWelfareIdAsSort("asc");
+        return minPostId == nextId; // true이면 마지막이라는 뜻.
     }
 
     public List<List<String>> getSubjectAllList() {

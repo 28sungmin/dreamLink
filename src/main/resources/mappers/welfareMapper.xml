@@ -62,4 +62,73 @@
         FROM
             `welfare`
     </select>
+    <select id="selectWelfareListPrev" parameterType="map" resultType="com.dreamlink.welfare.domain.Welfare">
+        SELECT
+            `id`,
+            `entity`,
+            `title`,
+            `department`,
+            `phoneCall`,
+            `applicant`,
+            `service`,
+            `book`,
+            `addition`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `welfare`
+        WHERE
+            <![CDATA[
+            `id` > #{standardId}
+            ]]>
+        LIMIT #{limit}
+    </select>
+    <select id="selectWelfareListNext" parameterType="map" resultType="com.dreamlink.welfare.domain.Welfare">
+        SELECT
+            `id`,
+            `entity`,
+            `title`,
+            `department`,
+            `phoneCall`,
+            `applicant`,
+            `service`,
+            `book`,
+            `addition`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `welfare`
+        WHERE
+            <![CDATA[
+            `id` < #{standardId}
+            ]]>
+        ORDER BY `id` DESC
+        LIMIT #{limit}
+    </select>
+    <select id="selectWelfareList" parameterType="map" resultType="com.dreamlink.welfare.domain.Welfare">
+        SELECT
+            `id`,
+            `entity`,
+            `title`,
+            `department`,
+            `phoneCall`,
+            `applicant`,
+            `service`,
+            `book`,
+            `addition`,
+            `createdAt`,
+            `updatedAt`
+        FROM
+            `welfare`
+        ORDER BY `id` DESC
+        LIMIT ${limit}
+    </select>
+    <select id="selectWelfareIdAsSort" parameterType="String" resultType="int">
+        SELECT
+            `id`
+        FROM
+            `welfare`
+        ORDER BY `id` ${sort}
+        LIMIT 1
+    </select>
 </mapper>

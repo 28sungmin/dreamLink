@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(".entity .nav-link").on("click", function(e) {
+    $(".entity .nav-link").on("click", function (e) {
         e.preventDefault();  // 기본 링크 클릭 동작을 막음
 
         $(".service-menu").removeClass("d-none");
@@ -20,12 +20,12 @@ $(document).ready(function () {
             $.ajax({
                 type: "post",
                 url: "/welfare/entity",
-                data: { "entity": entity },
+                data: {"entity": entity},
 
-                success: function(data) {
+                success: function (data) {
                     $("#services").html(data);
                 },
-                error: function(e) {
+                error: function (e) {
                     alert("entity에 해당하는 정책들이 없습니다. 관리자에게 문의하세요.");
                 }
             });
@@ -35,27 +35,27 @@ $(document).ready(function () {
         }
     });
 
-    $(".service-btn").on("click", function() {
+    $(".service-btn").on("click", function () {
         let serviceId = $(this).val();
         let entity = $(".entity .nav-link.active").text()
 
         $.ajax({
-            type:"post",
-            url:"/welfare/service",
-            data:{"serviceId":serviceId},
+            type: "post",
+            url: "/welfare/service",
+            data: {"serviceId": serviceId},
 
-            success: function(data) {
+            success: function (data) {
                 if (data.code == 200) {
                     $(".dropdown-menu").empty();
 
-                    data.service.forEach(function(service) {
+                    data.service.forEach(function (service) {
                         $(".dropdown-menu").append("<a class='dropdown-item' href='/welfare/serviceCard?entity=" + entity + "&service=" + service + "'>" + service + "</a>");
                     });
                 } else {
                     alert(data.error_message);
                 }
             },
-            error: function(e) {
+            error: function (e) {
                 alert("데이터 전송에 실패했습니다. 관리자에게 문의하세요");
             }
         })
@@ -63,7 +63,7 @@ $(document).ready(function () {
 
 
     // serviceCard를 동적으로 로드할 때
-    $(".dropdown-menu").on("click", ".dropdown-item", function(e) {
+    $(".dropdown-menu").on("click", ".dropdown-item", function (e) {
         e.preventDefault();  // 기본 href 링크 동작을 막음
 
         // URL에서 파라미터 추출
@@ -72,11 +72,11 @@ $(document).ready(function () {
         $.ajax({
             type: "get",
             url: serviceUrl,  // serviceCard를 반환하는 URL
-            success: function(data) {
+            success: function (data) {
                 // 성공적으로 데이터를 받으면 #service-card-container에 HTML 삽입
                 $("#services").html(data);
             },
-            error: function(e) {
+            error: function (e) {
                 alert("서비스 카드 로딩 실패. 관리자에게 문의하세요.");
             }
         });

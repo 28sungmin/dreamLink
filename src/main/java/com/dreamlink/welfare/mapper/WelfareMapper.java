@@ -16,4 +16,20 @@ public interface WelfareMapper {
     public List<Integer> selectWelfareIdListByEntity(String entity);
 
     public List<Welfare> selectWelfareAllList();
+
+    public List<Welfare> selectWelfareList(
+            @Param("standardId") Integer standardId,
+            @Param("limit") int limit);
+
+    public List<Welfare> selectWelfareListPrev(
+            @Param("standardId") Integer standardId,
+            @Param("limit") int limit);
+
+    public List<Welfare> selectWelfareListNext(
+            @Param("standardId") Integer standardId,
+            @Param("limit") int limit);
+
+    public int selectWelfareIdAsSort(String sort);
+
+
 }

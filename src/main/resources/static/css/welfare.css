@@ -113,3 +113,12 @@
 .service-scrap-star {
     margin-left: 20px;
 }
+
+/* 페이징 */
+.page {
+    margin-top: 50px;
+}
+.page > a {
+    text-decoration: none;
+    color: black;
+}
