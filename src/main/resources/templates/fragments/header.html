@@ -12,7 +12,7 @@
     <nav class="menu d-flex justify-content-center align-items-center bg-white col-7">
       <ul class="nav nav-fill">
         <li class="nav-item">
-          <a href="#" class="nav-link">카테고리</a>
+          <a href="/welfare" class="nav-link">카테고리</a>
         </li>
         <li class="nav-item">
           <a href="/calendar" class="nav-link">달력</a>
@@ -31,12 +31,19 @@
     <!-- 로그인, 회원가입 -->
     <div class="sign-search bg-white d-flex col-3 align-items-center justify-content-center">
       <div class="sign">
-        <ul class="nav">
+        <!-- 비로그인 시 -->
+        <ul class="nav" th:unless="${session.userName}">
           <li class="nav-item">
             <a href="/user/sign-in" class="nav-link">로그인</a>
           </li>
           <li class="nav-item">
             <a href="/user/sign-up/preferences" class="nav-link">회원가입</a>
+          </li>
+        </ul>
+        <!-- 로그인 시 -->
+        <ul class="nav" th:if="${session.userName}">
+          <li class="nav-item">
+            <a href="/user/sign-out" class="nav-link">로그아웃</a>
           </li>
         </ul>
       </div>
